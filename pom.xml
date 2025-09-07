@@ -11,12 +11,12 @@
     <packaging>jar</packaging>
 
     <name>my-website</name>
-    <description>Spring Boot Website Project</description>
+    <description>Flat structure Spring Boot project</description>
 
     <properties>
         <java.version>17</java.version>
-        <!-- 👇 this tells Spring Boot which class has the main() -->
-        <start-class>com.example.mywebsite.MyWebsiteApplication</start-class>
+        <!-- 👇 Main class without package -->
+        <start-class>MyWebsiteApplication</start-class>
     </properties>
 
     <dependencies>
@@ -24,13 +24,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- Lombok (optional, helps reduce boilerplate) -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <!-- Test -->
@@ -42,6 +35,7 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>.</sourceDirectory>
         <plugins>
             <!-- Spring Boot Maven Plugin -->
             <plugin>
