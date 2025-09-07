@@ -5,12 +5,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 👇 Add Spring Boot parent -->
+    <!-- Spring Boot parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.4</version>
-        <relativePath/> <!-- lookup from central repo -->
+        <relativePath/>
     </parent>
 
     <groupId>com.example</groupId>
@@ -27,13 +27,13 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter Web (no version needed now) -->
+        <!-- Spring Boot Web Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Test (no version needed) -->
+        <!-- Spring Boot Test Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -42,7 +42,9 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>.</sourceDirectory>
+        <!-- Source directory -->
+        <sourceDirectory>src/main/java</sourceDirectory>
+
         <plugins>
             <!-- Spring Boot Maven Plugin -->
             <plugin>
@@ -50,10 +52,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- Compiler Plugin -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -61,4 +64,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
