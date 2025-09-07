@@ -1,16 +1,11 @@
-package com.example.demo.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HomeController {
 
     @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("title", "Welcome to My Maven + SonarQube Website");
-        model.addAttribute("message", "This site is built with Spring Boot, tested with Maven, and analyzed with SonarQube!");
-        return "index";
+    public String home() {
+        return "🚀 Hello, flat Spring Boot project is running with Jenkins CI/CD!";
     }
 }
